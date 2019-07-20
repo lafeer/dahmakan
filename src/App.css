@@ -4,6 +4,10 @@ table {
   border-collapse: collapse;
 }
 
+th, td {
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
 }
