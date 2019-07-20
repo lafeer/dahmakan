@@ -24,6 +24,22 @@ class App extends Component {
       console.log(error)
     }
   }
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Date</th> 
+            <th>Time</th>
+            <th>Order Number</th>
+            <th>Paid with</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    );
+  }
 }
 
 export default App;
