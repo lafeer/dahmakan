@@ -31,3 +31,7 @@
     transform: rotate(360deg);
   }
 }
+
+.order-no {
+  color: rgba(0, 0, 0, 0.5)
+}

@@ -39,6 +39,7 @@ class App extends Component {
           {orders ? orders.map(order => (
             <tr key={order.order_id}>
               <td className="order-no">{`#${order.order_id}`}</td>
+              <td className={`paid-with ${order.paid_with.toLowerCase()}`}>{order.paid_with}</td>
             </tr>
           )) : (
             <tr>
