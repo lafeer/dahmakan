@@ -18,6 +18,16 @@ th {
   font-weight: bold;
 }
 
+.status.delivered {
+  color: #18d665 
+}
+
+.status.cancelled {
+  color: rgb(254, 79, 45)
+}
+
+.status.confirmed, .paid-with.prime {
+  color: #00acc6;
 }
 
 .order-no {
