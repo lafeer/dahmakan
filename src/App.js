@@ -38,6 +38,7 @@ class App extends Component {
         <tbody>
           {orders ? orders.map(order => (
             <tr key={order.order_id}>
+              <td className="order-no">{`#${order.order_id}`}</td>
             </tr>
           )) : (
             <tr>
