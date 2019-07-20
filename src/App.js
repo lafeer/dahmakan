@@ -39,6 +39,7 @@ class App extends Component {
         <tbody>
           {orders ? orders.map(order => (
             <tr key={order.order_id}>
+              <td className="date">{moment(order.arrives_at_utc).format('dddd, DD/MM/YYYY')}</td>
               <td className="time">{order.arrives_at_utc ? moment(order.arrives_at_utc).format('hh:mm A') : '-'}</td>
               <td className="order-no">{`#${order.order_id}`}</td>
               <td className={`paid-with ${order.paid_with.toLowerCase()}`}>{order.paid_with}</td>
