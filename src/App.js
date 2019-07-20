@@ -36,6 +36,14 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
+          {orders ? orders.map(order => (
+            <tr key={order.order_id}>
+            </tr>
+          )) : (
+            <tr>
+              <td>No orders to display</td>
+            </tr>
+          )}
         </tbody>
       </table>
     );
