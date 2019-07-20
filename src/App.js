@@ -1,5 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import './App.css';
@@ -25,6 +24,21 @@ class App extends Component {
       console.log(error)
     }
   }
+  
+  render() {
+    const { orders } = this.state;
+
+    const status = (utc) => {
+      if (utc) {
+        if (moment(utc).diff() > 0) {
+          return 'Confirmed'
+        } else {
+          return 'Delivered'
+        }
+      } 
+      return 'Cancelled'
+    }
+
     return (
       <table>
         <thead>
@@ -39,6 +53,7 @@ class App extends Component {
         <tbody>
           {orders ? orders.map(order => (
             <tr key={order.order_id}>
+              <td className={`status ${status(order.arrives_at_utc).toLowerCase()}`}>{status(order.arrives_at_utc)}</td>
               <td className="date">{moment(order.arrives_at_utc).format('dddd, DD/MM/YYYY')}</td>
               <td className="time">{order.arrives_at_utc ? moment(order.arrives_at_utc).format('hh:mm A') : '-'}</td>
               <td className="order-no">{`#${order.order_id}`}</td>
